@@ -41,7 +41,7 @@ app.get("/check",(req,res,next)=>{
 })
 
 app.use("/",registration)
-
+app.use(authorise.AuthorizeUser);
 app.use("/song",song)
 
 
