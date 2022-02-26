@@ -5,6 +5,7 @@ const song=require("./Routers/songRouter")
 const fs = require("fs");
 const mongodb=require("mongodb")
 const binary=mongodb.Binary
+const authorise=require("./modules/Authorize")
 
 const port =process.env.PORT || 3001
 
@@ -41,7 +42,7 @@ app.get("/check",(req,res,next)=>{
 })
 
 app.use("/",registration)
-app.use(authorise.AuthorizeUser);
+// app.use(authorise.AuthorizeUser);
 app.use("/song",song)
 
 
