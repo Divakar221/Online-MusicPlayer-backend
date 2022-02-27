@@ -10,8 +10,9 @@ module.exports=router.get('/getsong',songModule.getsong)
 
 module.exports=router.put('/playlist',songModule.playList)
 
-// module.exports=router.get('/getsong',songModule.particularsong)
 
 
 
-//for Updating Songs   =>  /song/updateSong
+
+/* for Updating Songs   =>  /song/updateSong  */
+/* Get List of songs => /song/getsong */

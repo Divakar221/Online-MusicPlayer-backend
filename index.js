@@ -20,27 +20,6 @@ app.use(cors())
 
 
 var a=mongo.connect();
-
-app.get("/check",(req,res,next)=>{
-    res.send("working")
-    const songsinsert=()=>{
-
-        // await mongo.db.collection("register").insertOne(req.body)
-       mongo.db.collection("newsong").insertOne({
-            fileName: "Staynewfile",
-            file: fs.createReadStream(
-              "./new.mp3"
-            ),
-          
-      } )
-      console.log("data1")
-    }
-    // songsinsert();
-
-
-    
-})
-
 app.use("/",registration)
 // app.use(authorise.AuthorizeUser);
 app.use("/song",song)

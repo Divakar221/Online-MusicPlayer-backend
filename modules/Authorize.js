@@ -1,11 +1,11 @@
 const jwt = require("jsonwebtoken");
 
 exports.AuthorizeUser = async (req,res,next) => {
-    // Check whether access token exists
+    /* Check whether access token exists or not */
     if(!req.headers['token']) 
         return res.status(401).send({msg : "Unauthorised : Access Token not found"})
     
-    // Verify token
+    /* Token Verification */
     try{
         req.body.user = await jwt.verify(req.headers['token'], "AGILE");
         next();
